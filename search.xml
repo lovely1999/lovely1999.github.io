@@ -4,11 +4,61 @@
   
     
     <entry>
+      <title>爬虫学习笔记--03</title>
+      <link href="/2019/05/05/Python03/"/>
+      <url>/2019/05/05/Python03/</url>
+      
+        <content type="html"><![CDATA[<p>想在网页上找到一些有用的信息该怎么办呢？承接上文，一起来看看吧！！！</p><a id="more"></a><hr><h2 id="Python爬虫网页下载器"><a href="#Python爬虫网页下载器" class="headerlink" title="Python爬虫网页下载器"></a>Python爬虫网页下载器</h2><ul><li>网页下载器：将互联网上URL对应的网页下载到本地的工具</li><li>Python有几种网页下载器<ul><li>urllib2（Python官方基础模块）</li><li>requests(第三方插件)</li></ul></li></ul><h2 id="urllib2下载网页的方法"><a href="#urllib2下载网页的方法" class="headerlink" title="urllib2下载网页的方法"></a>urllib2下载网页的方法</h2><ol><li>最简洁的方法  </li></ol><p>(<code>`</code>)<br>  import urllib2</p><p>  #直接请求<br>response = urllib2.</p><p>(<code>`</code>)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 爬虫 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>爬虫学习笔记--02</title>
+      <link href="/2019/05/02/Python02/"/>
+      <url>/2019/05/02/Python02/</url>
+      
+        <content type="html"><![CDATA[<p>想在网页上找到一些有用的信息该怎么办呢？承接上文，一起来看看吧！！！</p><a id="more"></a><hr><h3 id="URL管理器"><a href="#URL管理器" class="headerlink" title="URL管理器"></a>URL管理器</h3><ul><li><p>概念：管理待抓取URL集合和已抓取URL集合  </p></li><li><p>作用： 防止重复抓取、防止循环抓取</p></li><li><p>需要包含的功能</p><ul><li>添加新的URL到待爬取的集合中</li><li>判断待添加的URL是否在容器中</li><li>判断是否还有待爬取的URL</li><li>获取待爬取的URL</li><li>将URL从待爬取移动到已爬取</li></ul></li><li><p>实现方式</p><ol><li>将URL存放到内存中<blockquote><p>在python中可以将待爬取和已爬取的URL集合放置于 <strong>set()</strong> 中<br>python中set()可以直接去除集合中重复的元素</p></blockquote></li><li>将URL存储于关系型数据库中<blockquote><p>如果在MySQL中即可建立一表，其结构如下<br>urls(url,is_crawled)<br>is_crawled字段来标志此URL是否已被爬取</p></blockquote></li><li>可以将URL存储于缓冲数据库中<blockquote><p>如<strong>readis</strong>，它支持set数据结构<br>可以将以将待爬取和已爬取的URL集合放置于 <strong>set</strong> 中<br>优点：高性能</p></blockquote></li></ol></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 爬虫 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>爬虫学习笔记--01</title>
       <link href="/2019/05/01/Python01/"/>
       <url>/2019/05/01/Python01/</url>
       
-        <content type="html"><![CDATA[<p>想在网页上找到一些有用的信息该怎么办呢？</p><a id="more"></a><h2 id="爬虫准备工作"><a href="#爬虫准备工作" class="headerlink" title="爬虫准备工作"></a>爬虫准备工作</h2><ul><li>参考资料<ul><li>Python网络数据采集 · 图灵工业出版</li><li>精通Python爬虫框架Scrapy · 人民邮电出版社</li></ul></li><li>前提知识<ul><li>URL</li><li>http协议</li><li>web前端  · HTML、css、js</li><li>ajax</li><li>re、xpath</li><li>xml</li></ul></li></ul><h2 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h2><ul><li><p>爬虫定义：<br>  网络爬虫，即Web Spider，是一个很形象的名字。  </p><p>  把互联网比喻成一个蜘蛛网，那么Spider就是在网上爬来爬去的蜘蛛。</p><p>  网络蜘蛛是通过网页的链接地址来寻找网页的。</p><p>  从网站某一个页面（通常是首页）开始，读取网页的内容，找到在网页中的其它链接地址，</p><p>  然后通过这些链接地址寻找下一个网页，这样一直循环下去，直到把这个网站所有的网页都抓取完为止。</p><p>  如果把整个互联网当成一个请叫我汪海网站，那么网络蜘蛛就可以用这个原理把互联网上所有的网页都抓取下来。</p><p>  这样看来，网络爬虫就是一个爬行程序，一个抓取网页的程序。</p></li><li>两大特征<ul><li>能按照作者的要求下载数据或内容</li><li>能自动在网络上去流窜</li></ul></li><li><p>三大步骤：</p><ul><li>下载信息（网页）</li><li>提取正确的信息</li><li>根据一定的规则自动跳转到另外的网页上执行上两步的内容</li></ul></li><li><p>爬虫的分类：</p><ul><li>通用爬虫</li><li>专用爬虫（聚焦爬虫）</li></ul></li><li><p>Python网络包简介</p><ul><li>Python2.x：urllib /urllib2 / urllib3 / httplib / httplib2 / requests</li><li>Python3.x：urllib /urllib2 / urllib3 / requests</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>想在网页上找到一些有用的信息该怎么办呢？</p><a id="more"></a><h2 id="爬虫准备工作"><a href="#爬虫准备工作" class="headerlink" title="爬虫准备工作"></a>爬虫准备工作</h2><ul><li>参考资料<ul><li>Python网络数据采集 · 图灵工业出版</li><li>精通Python爬虫框架Scrapy · 人民邮电出版社</li></ul></li><li>前提知识<ul><li>URL</li><li>http协议</li><li>web前端  · HTML、css、js</li><li>ajax</li><li>re、xpath</li><li>xml</li></ul></li></ul><h2 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h2><ul><li><p>爬虫定义：<br>  网络爬虫，即Web Spider，是一个很形象的名字。  </p><p>  把互联网比喻成一个蜘蛛网，那么Spider就是在网上爬来爬去的蜘蛛。</p><p>  网络蜘蛛是通过网页的链接地址来寻找网页的。</p><p>  从网站某一个页面（通常是首页）开始，读取网页的内容，找到在网页中的其它链接地址，</p><p>  然后通过这些链接地址寻找下一个网页，这样一直循环下去，直到把这个网站所有的网页都抓取完为止。</p><p>  如果把整个互联网当成一个请叫我汪海网站，那么网络蜘蛛就可以用这个原理把互联网上所有的网页都抓取下来。</p><p>  这样看来，网络爬虫就是一个爬行程序，一个抓取网页的程序。</p></li><li>两大特征<ul><li>能按照作者的要求下载数据或内容</li><li>能自动在网络上去流窜</li></ul></li><li><p>三大步骤：</p><ul><li>下载信息（网页）</li><li>提取正确的信息</li><li>根据一定的规则自动跳转到另外的网页上执行上两步的内容</li></ul></li><li><p>爬虫的分类：</p><ul><li>通用爬虫</li><li>专用爬虫（聚焦爬虫）</li></ul></li><li><p>Python网络包简介</p><ul><li>Python2.x：urllib /urllib2 / urllib3 / httplib / httplib2 / requests</li><li>Python3.x：urllib /urllib2 / urllib3 / requests</li></ul></li></ul><hr><h2 id="爬虫的价值"><a href="#爬虫的价值" class="headerlink" title="爬虫的价值"></a>爬虫的价值</h2><ul><li>互联网数据为我所用！！</li></ul>]]></content>
       
       
       <categories>
