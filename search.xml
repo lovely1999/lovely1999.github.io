@@ -13,14 +13,18 @@
       
       <categories>
           
-          <category> -学习笔记 -前端 </category>
+          <category> 学习笔记 </category>
+          
+          <category> 前端 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -学习笔记 -前端 </tag>
+            <tag> 学习笔记 </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -47,9 +51,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> 学习笔记 </tag>
             
         </tags>
       
@@ -74,9 +78,9 @@
       
         <tags>
             
-            <tag> MarkDown </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> MarkDown </tag>
             
         </tags>
       
